@@ -1,0 +1,282 @@
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/all.scss ***!
+  \**************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+/*!******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/all.scss (1) ***!
+  \******************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css?family=Mochiy+Pop+P+One:regular&display=swap&subset=cyrillic-ext);
+/*!******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/all.scss (2) ***!
+  \******************************************************************************************************************/
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+body {
+  color: #2d3b46;
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  background-image: linear-gradient(100deg, #575656, #062e3f);
+}
+
+.todo {
+  width: 400px;
+  padding-top: 80px;
+  margin: 0 auto;
+}
+.todo__title {
+  text-align: center;
+  font-size: 48px;
+  color: #d7d7d7;
+  font-family: "Mochiy Pop P One";
+  margin-bottom: 20px;
+}
+.todo__list {
+  padding: 0px 30px;
+}
+.todo__list li {
+  background: rgba(223, 223, 223, 0.8);
+  padding: 4px 4px 4px 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border-radius: 20px;
+}
+.todo__list li.ok ._next input:checked + span {
+  transform: scale(1);
+}
+.todo__list li.ok ._text div::after {
+  left: 0;
+}
+.todo__list li.ok ._del::after {
+  background: url(assets/images/refresh-8a5e76a1515c85e27e13.svg) center/contain no-repeat;
+}
+.todo__list li ._next {
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  margin-right: 4px;
+  background: #2d3b46;
+  transition: 0.3s;
+}
+.todo__list li ._next:hover {
+  opacity: 0.8;
+}
+.todo__list li ._next input {
+  opacity: 0;
+  visibility: hidden;
+}
+.todo__list li ._next input:checked + span {
+  transform: scale(1);
+}
+.todo__list li ._next span {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  border-radius: 20px;
+  height: 100%;
+  background-image: url(assets/images/ok-6ef06381639a6454d26a.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 12px;
+  transform: scale(0);
+  transition: 0.3s;
+}
+.todo__list li ._text {
+  flex: 0 1 100%;
+  display: flex;
+  align-items: center;
+}
+.todo__list li ._text div {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.todo__list li ._text div::after {
+  content: "";
+  width: 100%;
+  height: 1.5px;
+  background: #575656;
+  position: absolute;
+  left: -100%;
+  transition: 0.3s;
+  top: 50%;
+  z-index: 2;
+}
+.todo__list li ._del {
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  border-radius: 20px;
+  background: #575656;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.todo__list li ._del:hover {
+  opacity: 0.8;
+}
+.todo__list li ._del:after {
+  content: "";
+  background: url(assets/images/basket-29dde3eb2227c4ff4f4b.svg) center/contain no-repeat;
+  background-size: 11px;
+  width: 14px;
+  height: 14px;
+}
+
+.header-todo {
+  position: relative;
+  margin-bottom: 40px;
+}
+.header-todo__set {
+  display: flex;
+  height: 38px;
+  overflow: hidden;
+}
+.header-todo__set input {
+  display: block;
+  flex: 0 1 100%;
+  border: 1px solid #b8b7b7;
+  padding: 0px 12px;
+  border-radius: 20px 0px 0px 20px;
+  background: transparent;
+  color: #d7d7d7;
+  border-right: 0;
+}
+.header-todo__btn {
+  position: relative;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 20px 20px 0;
+  background: #aeb1b4;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.header-todo__btn:after, .header-todo__btn:before {
+  position: absolute;
+  transition: 0.3s;
+}
+.header-todo__btn:before {
+  content: "I Got This!";
+}
+.header-todo__btn:after {
+  content: "Sure?";
+  transform: translateY(150%);
+}
+.header-todo__btn:hover {
+  opacity: 0.8;
+}
+.header-todo__btn:hover:before {
+  transform: translateY(-150%);
+}
+.header-todo__btn:hover:after {
+  transform: translateY(0);
+}
