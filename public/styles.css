@@ -132,7 +132,7 @@ body {
 .todo__list {
   padding: 0px 30px;
 }
-.todo__list li {
+.todo__item {
   background: rgba(223, 223, 223, 0.8);
   padding: 4px 4px 4px 8px;
   display: flex;
@@ -140,18 +140,14 @@ body {
   margin-bottom: 8px;
   border-radius: 20px;
 }
-.todo__list li.ok ._next input:checked + span {
+.todo__item.ok ._next._ev:after {
   transform: scale(1);
 }
-.todo__list li.ok ._text div::after {
+.todo__item.ok ._text div::after {
   left: 0;
 }
-.todo__list li.ok ._del::after {
-  background: url(assets/images/refresh-8a5e76a1515c85e27e13.svg) center/contain no-repeat;
-}
-.todo__list li ._next {
+.todo__item ._next {
   flex: 0 0 26px;
-  width: 26px;
   height: 26px;
   border-radius: 20px;
   overflow: hidden;
@@ -161,23 +157,17 @@ body {
   background: #2d3b46;
   transition: 0.3s;
 }
-.todo__list li ._next:hover {
+.todo__item ._next:hover {
   opacity: 0.8;
 }
-.todo__list li ._next input {
-  opacity: 0;
-  visibility: hidden;
-}
-.todo__list li ._next input:checked + span {
-  transform: scale(1);
-}
-.todo__list li ._next span {
+.todo__item ._next._ev:after {
+  content: "";
   display: block;
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
-  border-radius: 20px;
+  border-radius: inherit;
   height: 100%;
   background-image: url(assets/images/ok-6ef06381639a6454d26a.svg);
   background-position: center;
@@ -186,17 +176,17 @@ body {
   transform: scale(0);
   transition: 0.3s;
 }
-.todo__list li ._text {
+.todo__item ._text {
   flex: 0 1 100%;
   display: flex;
   align-items: center;
 }
-.todo__list li ._text div {
+.todo__item ._text div {
   position: relative;
   overflow: hidden;
   display: inline-block;
 }
-.todo__list li ._text div::after {
+.todo__item ._text div::after {
   content: "";
   width: 100%;
   height: 1.5px;
@@ -207,7 +197,7 @@ body {
   top: 50%;
   z-index: 2;
 }
-.todo__list li ._del {
+.todo__item ._del {
   flex: 0 0 26px;
   width: 26px;
   height: 26px;
@@ -219,15 +209,18 @@ body {
   transition: 0.3s;
   cursor: pointer;
 }
-.todo__list li ._del:hover {
+.todo__item ._del:hover {
   opacity: 0.8;
 }
-.todo__list li ._del:after {
+.todo__item ._del:after {
   content: "";
   background: url(assets/images/basket-29dde3eb2227c4ff4f4b.svg) center/contain no-repeat;
   background-size: 11px;
   width: 14px;
   height: 14px;
+}
+.todo__item ._del._cl::after {
+  background: url(assets/images/refresh-8a5e76a1515c85e27e13.svg) center/contain no-repeat;
 }
 
 .header-todo {
@@ -279,4 +272,25 @@ body {
 }
 .header-todo__btn:hover:after {
   transform: translateY(0);
+}
+
+.basket {
+  background-color: #062e3f;
+  flex: 1 1 30%;
+  position: fixed;
+  z-index: 20;
+  bottom: 20px;
+  right: 20px;
+}
+.basket__btn {
+  width: 40px;
+  height: 60px;
+  background: url(assets/images/basket-e845743ca74e278188ff.svg) center/contain no-repeat;
+}
+
+.post__null {
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  opacity: 0.6;
 }
