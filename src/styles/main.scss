@@ -1,0 +1,259 @@
+//<ШРИФТЫ>================================================================================
+//Кириллица &display=swap&subset=cyrillic-ext
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Mochiy+Pop+P+One:regular&display=swap&subset=cyrillic-ext);
+// @import "fonts";
+//<Шрифт по умолчанию>================================================================================
+
+$fontFamily: "Work Sans", sans-serif;
+
+//</Шрифт по умолчанию>================================================================================
+
+//</ШРИФТЫ>================================================================================
+
+//<ПЕРЕМЕННЫЕ>================================================================================
+
+$md1: 1279.98px;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 575.98px;
+
+$c1: #2d3b46;
+//</ПЕРЕМЕННЫЕ>================================================================================
+//<ОБНУЛЕНИЕ>================================================================================
+
+//</ОБНУЛЕНИЕ>================================================================================
+
+body {
+   color: #2d3b46;
+   font-size: 14px;
+   font-family: $fontFamily;
+   overflow-x: hidden;
+}
+
+.wrapper {
+   width: 100%;
+   min-height: 100%;
+   background-image: linear-gradient(100deg, #575656, #062e3f);
+}
+
+.todo {
+   width: 400px;
+   padding-top: 80px;
+   margin: 0 auto;
+   // .todo__title
+
+   &__title {
+      text-align: center;
+      font-size: 48px;
+      color: #d7d7d7;
+      font-family: "Mochiy Pop P One";
+      margin-bottom: 20px;
+   }
+
+   // .todo__body
+
+   &__body {
+   }
+
+   // .todo__header
+
+   &__header {
+   }
+
+   // .todo__list
+
+   &__list {
+      padding: 0px 30px;
+     
+   } 
+   // .todo__item 
+   &__item {
+         background: rgba(223, 223, 223, 0.8);
+         padding: 4px 4px 4px 8px;
+         display: flex;
+         align-items: center;
+         margin-bottom: 8px;
+         border-radius: 20px;
+         &.ok {
+            // opacity: 0.4;
+            ._next {
+               &._ev:after {
+                  transform: scale(1);
+               }
+            }
+            ._text {
+               div {
+                  &::after {
+                     left: 0;
+                  }
+               }
+            }
+           
+         }
+         ._next {
+            flex: 0 0 26px;
+         
+            height: 26px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            margin-right: 4px;
+            background: $c1;
+            transition: 0.3s;
+            &:hover {
+               opacity: 0.8;
+              
+            }
+            &._ev {
+               &:after {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  top: 0px;
+                  left: 0px;
+                  width: 100%;
+                  border-radius: inherit;
+                  height: 100%;
+                  background-image: url(/img/icon/ok.svg);
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: 12px;
+                  transform: scale(0);
+                  transition: 0.3s;
+               }
+            }
+         }
+         ._text {
+            flex: 0 1 100%;
+            display: flex;
+            align-items: center;
+
+            div {
+               position: relative;
+               overflow: hidden;
+               display: inline-block;
+               &::after {
+                  content: "";
+                  width: 100%;
+                  height: 1.5px;
+                  background: #575656;
+                  position: absolute;
+                  left: -100%;
+                  transition: 0.3s;
+                  top: 50%;
+                  z-index: 2;
+               }
+            }
+         }
+         ._del {
+            flex: 0 0 26px;
+            width: 26px;
+            height: 26px;
+            border-radius: 20px;
+            background: #575656;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover {
+               opacity: 0.8;
+            }
+           
+            &:after {
+               content: "";
+               background: url(/img/icon/basket.svg) center/contain no-repeat;
+               background-size: 11px;
+               width: 14px;
+               height: 14px;
+            }
+            &._cl {
+               &::after {
+                  background: url(/img/icon/refresh.svg) center/contain no-repeat;
+               }
+            }
+         }
+      }
+}
+.header-todo {
+  
+   position: relative;
+   margin-bottom: 40px;
+   // .header-todo__set
+
+   &__set {
+      display: flex;
+      height: 38px;
+      overflow: hidden;
+      input {
+         display: block;
+         flex: 0 1 100%;
+         border: 1px solid rgb(184, 183, 183);
+         padding: 0px 12px;
+         border-radius: 20px 0px 0px 20px;
+         background: transparent;
+         color: #d7d7d7;
+         border-right: 0;
+      }
+   }
+
+   // .header-todo__btn
+
+   &__btn {
+      position: relative;
+      width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0px 20px 20px 0;
+      background: #aeb1b4;
+      transition: 0.3s;
+      cursor: pointer;
+      &:after,
+      &:before {
+         position: absolute;
+         transition: 0.3s;
+      }
+      &:before {
+         content: "I Got This!";
+      }
+      &:after {
+         content: "Sure?";
+         transform: translateY(150%);
+      }
+      &:hover {
+         opacity: 0.8;
+         &:before {
+            transform: translateY(-150%);
+         }
+         &:after {
+            transform: translateY(0);
+         }
+      }
+   }
+}
+.basket {
+   background-color: #062e3f;
+   flex: 1 1 30%;
+    position: fixed;
+   z-index: 20;
+   bottom: 20px;
+      right: 20px;
+   // .basket__btn
+   &__btn {
+      
+      width: 40px;
+      height: 60px;
+      background: url('/img/basket.svg') center/contain no-repeat;
+   }
+}
+.post__null{
+   font-size: 16px;
+   text-align: center;
+   color: #fff;
+   opacity: 0.6;
+    
+}
+//</ОСНОВНОЙ БЛОК>
